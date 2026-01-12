@@ -3,8 +3,9 @@ import { ProductCard } from "@/components/ProductCard";
 import { OfferCard } from "@/components/OfferCard";
 import { QuoteForm } from "@/components/QuoteForm";
 import { useProducts, useOffers } from "@/hooks/use-insurance";
-import { ShieldCheck, Users, HeadphonesIcon, CheckCircle2, Phone } from "lucide-react";
+import { ShieldCheck, Users, HeadphonesIcon, CheckCircle2, Phone, ExternalLink } from "lucide-react";
 import { motion } from "framer-motion";
+import promoImage from "@assets/tameeni-maak-ar_1768256667517.webp";
 
 export default function Home() {
   const { data: products, isLoading: productsLoading } = useProducts();
@@ -17,6 +18,39 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background font-sans rtl">
       <Navbar />
+
+      {/* Promotional Banner - Clickable */}
+      <a 
+        href="https://zzser.com/?label=cbb3dba68794e5c32e7e69dd0e073f56"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block"
+        data-testid="link-promo-banner"
+      >
+        <motion.section 
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="bg-gradient-to-l from-blue-50 to-blue-100 py-4 cursor-pointer hover:from-blue-100 hover:to-blue-200 transition-all"
+        >
+          <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-center gap-4">
+            <img 
+              src={promoImage} 
+              alt="تأميني معك - عرض خاص" 
+              className="h-24 md:h-32 object-contain"
+            />
+            <div className="text-center md:text-right">
+              <p className="text-lg md:text-xl font-bold text-primary font-arabic">
+                احصل على أفضل عروض التأمين الآن
+              </p>
+              <div className="flex items-center justify-center md:justify-start gap-2 text-muted-foreground font-arabic">
+                <span>اضغط هنا للحصول على عرضك الخاص</span>
+                <ExternalLink className="w-4 h-4" />
+              </div>
+            </div>
+          </div>
+        </motion.section>
+      </a>
 
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-b from-primary/5 to-background pt-16 pb-24 md:pt-32 md:pb-32">
