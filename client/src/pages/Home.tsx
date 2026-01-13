@@ -51,10 +51,10 @@ export default function Home() {
                 className="w-full h-auto object-cover"
               />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
-                <p className="text-white font-bold font-arabic text-lg flex items-center gap-2 justify-end">
+                <h1 className="text-white font-bold font-arabic text-4xl flex items-center gap-2 justify-end">
                   <ExternalLink className="w-4 h-4" />
                   اضغط هنا للحصول على عرضك
-                </p>
+                </h1>
               </div>
             </motion.div>
           </a>
