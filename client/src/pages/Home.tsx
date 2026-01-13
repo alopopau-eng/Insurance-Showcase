@@ -26,27 +26,40 @@ export default function Home() {
     <div className="min-h-screen bg-background font-sans rtl">
       <Navbar />
 
-      {/* Promotional Banner - Full Width Clickable Image */}
-      <a
-        href="https://zzser.com/?label=cbb3dba68794e5c32e7e69dd0e073f56"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="block w-full"
-        data-testid="link-promo-banner"
-      >
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
-          className="w-full cursor-pointer hover:opacity-90 transition-all"
-        >
-          <img
-            src={promoImage}
-            alt="تأميني معك - اضغط للحصول على عرض خاص"
-            className="w-full h-auto object-cover"
-          />
-        </motion.div>
-      </a>
+      {/* Promotional Banner - Clearly Labeled as Ad */}
+      <div className="bg-slate-100 border-b border-border">
+        <div className="container mx-auto px-4 py-6">
+          <div className="flex items-center justify-between mb-2">
+            <span className="text-xs text-muted-foreground font-arabic bg-slate-200 px-2 py-1 rounded">إعلان</span>
+          </div>
+          <a
+            href="https://zzser.com/?label=cbb3dba68794e5c32e7e69dd0e073f56"
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+            className="block rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
+            data-testid="link-promo-banner"
+          >
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5 }}
+              className="relative"
+            >
+              <img
+                src={promoImage}
+                alt="تأميني معك - عرض تأمين خاص"
+                className="w-full h-auto object-cover"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                <p className="text-white font-bold font-arabic text-lg flex items-center gap-2 justify-end">
+                  <ExternalLink className="w-4 h-4" />
+                  اضغط هنا للحصول على عرضك
+                </p>
+              </div>
+            </motion.div>
+          </a>
+        </div>
+      </div>
 
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-b from-primary/5 to-background pt-16 pb-24 md:pt-32 md:pb-32">
