@@ -12,7 +12,7 @@ import {
   ExternalLink,
 } from "lucide-react";
 import { motion } from "framer-motion";
-import promoImage from "@assets/tameeni-maak-ar_1768256667517.webp";
+import promoImage from "@assets/603914566_18418166449188673_8085109396950144801_n_1768301937802.jpg";
 
 export default function Home() {
   const { data: products, isLoading: productsLoading } = useProducts();
