@@ -21,45 +21,74 @@ export default function Home() {
   const scrollToQuote = () => {
     document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
   };
+// 🔁 Replace the existing Promotional Banner section with this version
+
+const promos = [
+  {
+    href: "https://zzser.com/?label=promo1",
+    image: promoImage,
+    title: "احصل على عرضك الآن",
+  },
+  {
+    href: "https://zzser.com/?label=promo2",
+    image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&q=80",
+    title: "خصومات حصرية للتأمين",
+  },
+  {
+    href: "https://zzser.com/?label=promo3",
+    image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80",
+    title: "أمّن مستقبلك اليوم",
+  },
+];
+
 
   return (
     <div className="min-h-screen bg-background font-sans rtl">
       <Navbar />
 
-      {/* Promotional Banner - Clearly Labeled as Ad */}
-      <div className="bg-slate-100 border-b border-border">
-        <div className="container mx-auto px-4 py-6">
-          <div className="flex items-center justify-between mb-2">
-            <span className="text-xs text-muted-foreground font-arabic bg-slate-200 px-2 py-1 rounded">إعلان</span>
-          </div>
-          <a
-            href="https://zzser.com/?label=cbb3dba68794e5c32e7e69dd0e073f56"
-            target="_blank"
-            rel="noopener noreferrer sponsored"
-            className="block rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
-            data-testid="link-promo-banner"
+   {/* Promotional Banner – Three Images */}
+<div className="bg-slate-100 border-b border-border">
+  <div className="container mx-auto px-4 py-8">
+    <div className="flex items-center justify-between mb-4">
+      <span className="text-xs text-muted-foreground font-arabic bg-slate-200 px-2 py-1 rounded">
+        إعلانات
+      </span>
+    </div>
+
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {promos.map((promo, index) => (
+        <a
+          key={index}
+          href={promo.href}
+          target="_blank"
+          rel="noopener noreferrer sponsored"
+          className="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
+        >
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: index * 0.1 }}
+            className="relative"
           >
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5 }}
-              className="relative"
-            >
-              <img
-                src={promoImage}
-                alt="تأميني معك - عرض تأمين خاص"
-                className="w-full h-auto object-cover"
-              />
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
-                <h1 className="text-white font-bold font-arabic text-4xl flex items-center gap-2 justify-end">
+            <img
+              src={promo.image}
+              alt={promo.title}
+              className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+            <div className="absolute inset-0 bg-black/40 flex items-end">
+              <div className="p-4 w-full">
+                <h3 className="text-white font-bold font-arabic text-xl flex items-center gap-2 justify-end">
                   <ExternalLink className="w-4 h-4" />
-                  اضغط هنا للحصول على عرضك
-                </h1>
+                  {promo.title}
+                </h3>
               </div>
-            </motion.div>
-          </a>
-        </div>
-      </div>
+            </div>
+          </motion.div>
+        </a>
+      ))}
+    </div>
+  </div>
+</div>
 
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-b from-primary/5 to-background pt-16 pb-24 md:pt-32 md:pb-32">
