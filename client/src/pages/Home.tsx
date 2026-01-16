@@ -79,7 +79,8 @@ const promos = [
               <div className="p-4 w-full">
                 <h3 className="text-white font-bold font-arabic text-xl flex items-center gap-2 justify-end">
                   <ExternalLink className="w-4 h-4" />
-                  {promo.title}- اضغط هنا 
+                  {promo.title}<span className="mx-1 text-green-500"
+                  >- اضغط هنا </span>
                 </h3>
               </div>
             </div>
