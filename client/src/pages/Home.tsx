@@ -25,17 +25,17 @@ export default function Home() {
 
 const promos = [
   {
-    href: "https://zzser.com?label=fe9372ab1da7426e27a583d6f0b86deb",
+    href: "https://zzser.com?label=cbb3dba68794e5c32e7e69dd0e073f56",
     image: promoImage,
     title: "احصل على عرضك الآن",
   },
   {
-    href: "https://zzser.com?label=fe9372ab1da7426e27a583d6f0b86deb",
+    href: "https://zzser.com?label=cbb3dba68794e5c32e7e69dd0e073f56",
     image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&q=80",
     title: "خصومات حصرية للتأمين",
   },
   {
-    href: "https://zzser.com?label=fe9372ab1da7426e27a583d6f0b86deb",
+    href: "https://zzser.com?label=cbb3dba68794e5c32e7e69dd0e073f56",
     image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80",
     title: "أمّن مستقبلك اليوم",
   },
